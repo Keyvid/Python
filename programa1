@@ -1,0 +1,5 @@
+nome = input("Qual é o seu nome? ")
+peso = float(input("Informe o seu peso: "))
+altura = float(input("Informe a sua altura: "))
+imc = peso/(altura**2)
+print("Olá {}, seu IMC é: {:.2f}" .format(nome, imc))

@@ -1,0 +1,9 @@
+def calcula_imc (peso, altura):
+    print ("Parâmetro peso: ", peso)
+    print ("Parâmetro altura: ", altura)
+    imc = peso/altura**2
+    print ("IMC: ", imc)
+
+print ("Início do programa")
+calcula_imc(70, 1.80)
+print ("Fim do programa")

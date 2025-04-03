@@ -1,7 +1,13 @@
+import tkinter
+from tkinter import Button
+from tkinter import Entry
 from tkinter import Label
+from tkinter import messagebox
 
 def acao():
-    print("Te falei para não fazer isso.")
+    print("Botão pressionado.")
+    msg = messagebox.showinfo("Te falei para não clicar.", texto.get())
+
 principal = tkinter.Tk()
 botao = Button(principal, text="Não clique aqui!", command=acao)
 botao.grid(row=0, column=2)

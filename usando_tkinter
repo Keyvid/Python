@@ -1,0 +1,15 @@
+from tkinter import Label
+
+def acao():
+    print("Te falei para não fazer isso.")
+principal = tkinter.Tk()
+botao = Button(principal, text="Não clique aqui!", command=acao)
+botao.grid(row=0, column=2)
+
+texto=Entry(principal)
+texto.grid(row=0, column=1)
+
+etiqueta=Label(principal, text="Nome")
+etiqueta.grid(row=0, column=0)
+
+principal.mainloop()

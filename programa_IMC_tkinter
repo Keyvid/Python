@@ -1,0 +1,56 @@
+print ("Módulo IMC importado")
+
+def calcula_imc(peso, altura):
+    print("Peso: ", peso)
+    print("Altura: ", altura)
+    imc = float(peso) / float (altura) ** 2
+    return imc
+
+def classifica_icm(indice):
+    if indice < 18.5:
+        return "Baixo peso"
+    elif indice < 25:
+        return "Peso adequado"
+    elif indice < 30:
+        return "Sobrepreso"
+    else:
+        return "Obeso"
+        
+import tkinter
+from tkinter import Button, Entry, Label, messagebox, PhotoImage
+import imc
+
+def acao():
+    print("Botão presssionado!")
+    indice = imc.calcula_imc(peso=peso.get(), altura=altura.get())
+    classificacao = imc.classifica_imc(indice)
+    msg = messagebox.showinfo("Classificação IMC", classificacao)
+
+principal = tkinter.Tk()
+# Código da interface
+
+# Logo
+imagem = PhotoImage(file="Logo.gif")
+logo = Label(principal, image=imagem)
+logo.image = imagem
+logo.grid(row=0, column=0, rowspan=2)
+
+#Etiqueta e caixa de entrada da altura
+etiqueta_altura = Label(principal, text="Altura: ")
+etiqueta_altura.grid(row=0, column=1)
+
+altura = Entry(principal)
+altura.grid(row=0, column=2)
+
+# Etiqueta e caixa de entrada do peso
+etiqueta_peso = Label(principal, text="Peso: ")
+etiqueta_peso.grid(row=1, column=1)
+
+peso = Entry(principal)
+peso.grid(row=1, column=2)
+
+# Botão para calcular
+botao = Button(principal, text="Calcular", command=acao)
+botao.grid(row=2, column=2)
+
+principal.mainloop()
